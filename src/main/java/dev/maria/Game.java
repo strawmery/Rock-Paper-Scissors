@@ -5,9 +5,9 @@ import java.util.Random;
 public class Game {
 
     public static String randomElection (){
-    String [] opciones = {"Piedra", "Papel","Tijera"};
-    Random random = new Random();
-    return opciones[random.nextInt(opciones.length)];
+        String [] opciones = {"Piedra", "Papel","Tijera"};
+        Random random = new Random();
+        return opciones[random.nextInt(opciones.length)];
     }
 
     public static String winnerDetermination(String user, String computer){
@@ -22,7 +22,7 @@ public class Game {
                 case "Tijera":
                     return computer.equalsIgnoreCase("Papel")? "Winner" : "Game Over";
                 default:
-                    throw new IllegalArgumentException("Elección inválida: " + user);
+                    throw new IllegalArgumentException("Elección inválida");
             }
                 
         }
