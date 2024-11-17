@@ -5,7 +5,7 @@ import java.util.Random;
 public class Game {
 
     public static String randomElection (){
-        String [] opciones = {"Piedra", "Papel","Tijera"};
+        String [] opciones = {"Piedra", "Papel","Tijera","Lagarto","Spock"};
         Random random = new Random();
         return opciones[random.nextInt(opciones.length)];
     }
@@ -16,11 +16,35 @@ public class Game {
         }else{
             switch(user){
                 case "Piedra":
-                    return computer.equalsIgnoreCase("Tijera")? "Winner" : "Game Over";
+                    if(computer.equalsIgnoreCase("Tijera") || computer.equalsIgnoreCase("Lagarto")){
+                        return "Winner";
+                    }else{
+                        return "Game Over";
+                    }
                 case "Papel": 
-                    return computer.equalsIgnoreCase("Piedra")? "Winner" : "Game Over";
+                    if(computer.equalsIgnoreCase("Piedra") || computer.equalsIgnoreCase("Spock")){
+                        return "Winner";
+                    }else{
+                        return "Game Over";
+                    }
                 case "Tijera":
-                    return computer.equalsIgnoreCase("Papel")? "Winner" : "Game Over";
+                    if(computer.equalsIgnoreCase("Papel") || computer.equalsIgnoreCase("Lagarto")){
+                        return "Winner";
+                    }else{
+                        return "Game Over";
+                    }
+                case "Lagarto":
+                    if(computer.equalsIgnoreCase("Piedra") || computer.equalsIgnoreCase("Spock")){
+                        return "Winner";
+                    }else{
+                        return "Game Over";
+                    }
+                case "Spock":
+                    if(computer.equalsIgnoreCase("Tijera") || computer.equalsIgnoreCase("Papel")){
+                        return "Winner";
+                    } else{
+                        return "Game Over";
+                    }
                 default:
                     throw new IllegalArgumentException("Elección inválida");
             }
