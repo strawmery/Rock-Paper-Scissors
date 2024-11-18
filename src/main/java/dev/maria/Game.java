@@ -32,13 +32,13 @@ public class Game {
                             return "Game Over";
                         }
                     case "Lagarto":
-                        if(computer.equalsIgnoreCase("Piedra") || computer.equalsIgnoreCase("Spock")){
+                        if(computer.equalsIgnoreCase("Papel") || computer.equalsIgnoreCase("Spock")){
                             return "Winner";
                         }else{
                             return "Game Over";
                         }
                     case "Spock":
-                        if(computer.equalsIgnoreCase("Tijera") || computer.equalsIgnoreCase("Papel")){
+                        if(computer.equalsIgnoreCase("Tijera") || computer.equalsIgnoreCase("Piedra")){
                             return "Winner";
                         } else{
                             return "Game Over";
